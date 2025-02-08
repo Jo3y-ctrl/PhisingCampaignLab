@@ -1,0 +1,24 @@
+import smtplib
+
+#Define the sender, reciver, and message
+sender_email = *insert the sender's email here*
+reciever_email = *insert the reciever's email here*
+message = """\
+Subject: Insert Your Own Subject
+
+This is the message part of the enail"""
+
+# Define the SMTP server details
+smtp_server = "smtp.gmail.com"
+smtp_port = 587
+
+#login to the smtp server
+smtp_obj = smtplib.SMTP(smtp_server, smtp_port)
+smtp_obj.starttls()
+smtp_obj.login(sender_email, "minl bjbz eamg nltx")
+
+#send the email
+smtp_obj.sendmail(sender_email, receiver_email, message)
+
+#Close the SMTP connection
+smtp_obj.quit()
